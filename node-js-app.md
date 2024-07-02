@@ -91,16 +91,16 @@ CMD ["pm2-runtime", "ecosystem.config.js"]
 >
 >  Global Installation of PM2: `npm install -g pm2`
 > Local Installation of Project Dependencies: `npm install`
-
+>
 > npm: The Node.js package manager.
 > `install -g pm2`  : This command installs PM2 globally on the Docker container.
 > -g flag indicates a global installation, meaning PM2 will be available system-wide in the Docker container.
 > pm2 is a process manager for Node.js applications. It allows you to keep your applications alive forever, reload them without downtime, and facilitate common system admin tasks.
-
+>
 > npm: The Node.js package manager.
 > `install`: This command installs all the dependencies listed in your project's package.json file into the node_modules directory within the working directory (/usr/src/app).
-
-
+>
+>
 > `npm install --production`
 > `npm install`: This command installs all dependencies listed in the dependencies and >devDependencies sections of your package.json file by default.
 > `--production`: This flag tells npm to install only the dependencies listed under dependencies in your package.json file and to ignore devDependencies.
