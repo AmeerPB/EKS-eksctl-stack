@@ -1,1 +1,0 @@
-# debian-based-ELK-stack
