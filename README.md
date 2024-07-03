@@ -204,30 +204,31 @@ Generate an enrollment token for Elasticsearch nodes with
 > [!CAUTION]
 > 
 > ### Sample commands - OLD / DO NOT run 
+> 
+> ``` bash
+>
+> /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
+>
+> /usr/share/elasticsearch/bin/elasticsearch-reset-password -u kibana_system
+>
+> /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token --scope kibana
+>
+> elasticsearch.hosts: ["http://localhost:9200"]
+> elasticsearch.hosts: ["http://localhost:9200"]
+>
+>
+> /usr/share/elasticsearch/bin/elasticsearch-reset-password -i -u elastic --url https://localhost:9200
+> /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana --url http://localhost:9200
+>
+>
+> /usr/share/elasticsearch/bin/elasticsearch-reset-password -i -u elastic --url http://localhost:9200
+>
+>
+> ```
+>
 
-``` bash
 
-/usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
-
-/usr/share/elasticsearch/bin/elasticsearch-reset-password -u kibana_system
-
-/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token --scope kibana
-
-elasticsearch.hosts: ["http://localhost:9200"]
-elasticsearch.hosts: ["http://localhost:9200"]
-
-
-/usr/share/elasticsearch/bin/elasticsearch-reset-password -i -u elastic --url https://localhost:9200
-/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana --url http://localhost:9200
-
-
-/usr/share/elasticsearch/bin/elasticsearch-reset-password -i -u elastic --url http://localhost:9200
-
-
-```
-
-
-# ----------------------------------------------------------------------------------------------
+### ---------------------------------------
 
 
 ``` bash
@@ -244,7 +245,7 @@ echo "deb [signed-by=/usr/share/keyrings/elastic-keyring.gpg] https://artifacts.
 ```
 
 
-# ----------------------------------------------------------------------------------------------
+### ---------------------------------------
 
 
 
