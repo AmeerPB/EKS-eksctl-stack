@@ -8,11 +8,22 @@
 > Backup any files/directories before making any changes
 
 
+<br />
+<br />
+<br />
+
+
 
 ### OpenJDK
 
 `apt update && apt install -y openjdk-8-jdk
 `
+
+
+<br />
+<br />
+<br />
+
 
 ### NGINX
 
@@ -47,6 +58,13 @@ systemctl restart nginx && systemctl status nginx
 
 ```
 
+
+<br />
+<br />
+<br />
+
+
+
 ### Elastic
 
 https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html
@@ -76,6 +94,11 @@ bin/elasticsearch-create-enrollment-token --scope kibana
 
 ```
 
+<br />
+<br />
+<br />
+
+
 
 ### Kibana
 
@@ -103,6 +126,11 @@ systemctl start kibana.service && systemctl status kibana.service
 ```
 
 
+<br />
+<br />
+<br />
+
+
 
 ### Logstash
 
@@ -119,6 +147,11 @@ edited /etc/apt/sources.list.d/elastic-8.x.list and commented out
 ```
 
 
+<br />
+<br />
+<br />
+
+
 
 ### Adding htaccess password
 
@@ -128,6 +161,11 @@ apt install -y apache2-utils
 htpasswd -c /etc/nginx/htpasswd.users admin
 
 ```
+
+
+<br />
+<br />
+<br />
 
 
 
@@ -164,12 +202,22 @@ htpasswd -c /etc/nginx/htpasswd.users admin
 > `bin/elasticsearch-create-enrollment-token -s kibana`
 
 
+<br />
+<br />
+<br />
+
+
 
 ### Reference
 
 User --> elastic
 
 https://medium.com/@cybertoolguardian/what-is-elk-and-installing-elk-stack-elasticsearch-logstash-kibana-in-ubuntu-376d60c445b3
+
+
+<br />
+<br />
+<br />
 
 
 
@@ -210,6 +258,11 @@ Generate an enrollment token for Elasticsearch nodes with
 
 ```
 
+<br />
+<br />
+<br />
+
+
 
 > [!CAUTION]
 > 
@@ -238,7 +291,14 @@ Generate an enrollment token for Elasticsearch nodes with
 >
 
 
+
 ### ---------------------------------------
+
+
+<br />
+<br />
+<br />
+
 
 
 ``` bash
