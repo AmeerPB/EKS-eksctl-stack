@@ -124,33 +124,35 @@ htpasswd -c /etc/nginx/htpasswd.users admin
 > [!WARNING]
 > 
 > ### Elastic manual installation -- Issues
+>
+>
+> ``` bash
+> 
+> wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.14.1-amd64.deb
+> wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.14.1-amd64.deb.sha512
+> shasum -a 512 -c elasticsearch-8.14.1-amd64.deb.sha512 
+> sudo dpkg -i elasticsearch-8.14.1-amd64.deb
+> 
+> sudo systemctl start elasticsearch.service
+> 
+> 
+> 
+> root@ip-172-31-26-107:/etc/elasticsearch/jvm.options.d# curl http://localhost:9200
+> curl: (52) Empty reply from server 
+>
+>
+> ```
+>
+> edit /etc/elasticsearch/elasticsearch.yml
+>
+> and replace this setting with false
+> ### Enable security features
+> xpack.security.enabled: false
+>
+>
+>
+> `bin/elasticsearch-create-enrollment-token -s kibana`
 
-
-``` bash
-
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.14.1-amd64.deb
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.14.1-amd64.deb.sha512
-shasum -a 512 -c elasticsearch-8.14.1-amd64.deb.sha512 
-sudo dpkg -i elasticsearch-8.14.1-amd64.deb
-
-sudo systemctl start elasticsearch.service
-
-
-
-root@ip-172-31-26-107:/etc/elasticsearch/jvm.options.d# curl http://localhost:9200
-curl: (52) Empty reply from server
-
-```
-
-edit /etc/elasticsearch/elasticsearch.yml
-
-and replace this setting with false
-### Enable security features
-xpack.security.enabled: false
-
-
-
-`bin/elasticsearch-create-enrollment-token -s kibana`
 
 
 ### Reference
