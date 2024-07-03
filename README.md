@@ -1,10 +1,13 @@
 
-# OpenJDK
+### OpenJDK
 
-apt update && apt install -y openjdk-8-jdk
+`apt update && apt install -y openjdk-8-jdk
+`
+
+### NGINX
 
 
-# NGINX
+``` bash
 
 apt install nginx -y
 
@@ -32,11 +35,13 @@ server {
 
 systemctl restart nginx && systemctl status nginx
 
+```
 
-
-# Elastic
+### Elastic
 
 https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html
+
+``` bash
 
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
 
@@ -59,7 +64,13 @@ sudo systemctl start elasticsearch.service && systemctl status elasticsearch.ser
 bin/elasticsearch-create-enrollment-token --scope kibana
 
 
-# Kibana
+```
+
+
+### Kibana
+
+
+``` bash
 
 https://www.elastic.co/guide/en/kibana/current/deb.html
 
@@ -79,12 +90,14 @@ echo "server.host: "localhost"" | tee -a /etc/kibana/kibana.yml
 systemctl start kibana.service && systemctl status kibana.service
 
 
+```
 
 
 
+### Logstash
 
-# Logstash
 
+``` bash
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elastic-keyring.gpg
 
 echo "deb [signed-by=/usr/share/keyrings/elastic-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
@@ -93,24 +106,27 @@ sudo apt update && sudo apt install logstash -y
 
 edited /etc/apt/sources.list.d/elastic-8.x.list and commented out 
 
+```
 
 
 
+### Adding htaccess password
 
-# Adding htaccess password
-
+``` bash
 apt install -y apache2-utils
 
 htpasswd -c /etc/nginx/htpasswd.users admin
 
-
-
-###################
+```
 
 
 
-# Elastic manual installation -- Issues
+> [!WARN]
+> 
+> ### Elastic manual installation -- Issues
 
+
+``` bash
 
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.14.1-amd64.deb
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.14.1-amd64.deb.sha512
@@ -124,20 +140,20 @@ sudo systemctl start elasticsearch.service
 root@ip-172-31-26-107:/etc/elasticsearch/jvm.options.d# curl http://localhost:9200
 curl: (52) Empty reply from server
 
-
+```
 
 edit /etc/elasticsearch/elasticsearch.yml
 
 and replace this setting with false
-# Enable security features
+### Enable security features
 xpack.security.enabled: false
 
 
 
-bin/elasticsearch-create-enrollment-token -s kibana
+`bin/elasticsearch-create-enrollment-token -s kibana`
 
 
-# Reference
+### Reference
 
 User --> elastic
 
@@ -145,8 +161,9 @@ https://medium.com/@cybertoolguardian/what-is-elk-and-installing-elk-stack-elast
 
 
 
-# Installation logs
+### Installation logs
 
+``` bash
 
 root@ip-172-31-26-107:/home/ubuntu# dpkg -i elasticsearch-8.14.1-amd64.deb
 Selecting previously unselected package elasticsearch.
@@ -179,11 +196,14 @@ Generate an enrollment token for Elasticsearch nodes with
 '/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s node'.
 
 
+```
 
 
-# Sample commands - OLD / DO NOT run 
+> [!CAUTION]
+> 
+> ### Sample commands - OLD / DO NOT run 
 
-
+``` bash
 
 /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
 
@@ -202,11 +222,13 @@ elasticsearch.hosts: ["http://localhost:9200"]
 /usr/share/elasticsearch/bin/elasticsearch-reset-password -i -u elastic --url http://localhost:9200
 
 
-
+```
 
 
 # ----------------------------------------------------------------------------------------------
 
+
+``` bash
 
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
@@ -216,6 +238,8 @@ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearm
 echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
 echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-8.x.list
 echo "deb [signed-by=/usr/share/keyrings/elastic-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
+
+```
 
 
 # ----------------------------------------------------------------------------------------------
