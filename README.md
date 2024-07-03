@@ -121,7 +121,7 @@ htpasswd -c /etc/nginx/htpasswd.users admin
 
 
 
-> [!WARN]
+> [!WARNING]
 > 
 > ### Elastic manual installation -- Issues
 
