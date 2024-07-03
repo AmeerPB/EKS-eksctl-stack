@@ -4,6 +4,17 @@
 > Creating an application
 
 
+<br />
+<br />
+
+
+> [!TIP]
+> 
+> ## Reference
+> https://www.youtube.com/watch?v=tYAenovWCRA
+
+<br />
+<br />
 
 ### From the AWS Cloudshell, init a NodeJS app
 
@@ -28,6 +39,8 @@ Wrote to /home/cloudshell-user/node-app/package.json:
 
 ```
 
+<br />
+<br />
 
 ### Save the application
 
@@ -48,7 +61,8 @@ npm notice
 
 
 ```
-
+<br />
+<br />
 
 ### Create an index.js file
 
@@ -64,7 +78,8 @@ app.listen(30001, () => console.log("NodeJS app started on port 30001"));
 
 ```
 
-
+<br />
+<br />
 
 ### Create a Dockerfile
 
@@ -106,7 +121,8 @@ CMD ["pm2-runtime", "ecosystem.config.js"]
 > `--production`: This flag tells npm to install only the dependencies listed under dependencies in your package.json file and to ignore devDependencies.
 
 
-
+<br />
+<br />
 
 
 
@@ -151,7 +167,8 @@ module.exports = {
 
 
 
-
+<br />
+<br />
 
 
 ### K8s deployment and service file
