@@ -10,7 +10,7 @@
 
 <br />
 <br />
-<br />
+
 
 
 
@@ -22,7 +22,7 @@
 
 <br />
 <br />
-<br />
+
 
 
 ### NGINX
@@ -61,7 +61,7 @@ systemctl restart nginx && systemctl status nginx
 
 <br />
 <br />
-<br />
+
 
 
 
@@ -96,7 +96,7 @@ bin/elasticsearch-create-enrollment-token --scope kibana
 
 <br />
 <br />
-<br />
+
 
 
 
@@ -128,7 +128,7 @@ systemctl start kibana.service && systemctl status kibana.service
 
 <br />
 <br />
-<br />
+
 
 
 
@@ -149,7 +149,7 @@ edited /etc/apt/sources.list.d/elastic-8.x.list and commented out
 
 <br />
 <br />
-<br />
+
 
 
 
@@ -165,7 +165,7 @@ htpasswd -c /etc/nginx/htpasswd.users admin
 
 <br />
 <br />
-<br />
+
 
 
 
@@ -204,7 +204,7 @@ htpasswd -c /etc/nginx/htpasswd.users admin
 
 <br />
 <br />
-<br />
+
 
 
 
@@ -217,7 +217,7 @@ https://medium.com/@cybertoolguardian/what-is-elk-and-installing-elk-stack-elast
 
 <br />
 <br />
-<br />
+
 
 
 
@@ -260,7 +260,7 @@ Generate an enrollment token for Elasticsearch nodes with
 
 <br />
 <br />
-<br />
+
 
 
 
@@ -297,7 +297,7 @@ Generate an enrollment token for Elasticsearch nodes with
 
 <br />
 <br />
-<br />
+
 
 
 
