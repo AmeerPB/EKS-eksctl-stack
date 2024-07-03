@@ -1,6 +1,26 @@
-# Deploying and Scaling an Amazon EKS Cluster
+
+
+> [!TIP]
+>
+> ### Reference
+> https://www.youtube.com/watch?v=6wlj-x58lPM 
+
+
+<br />
+<br />
+<br />
+
+
+## Deploying and Scaling an Amazon EKS Cluster
 
 In this lab, you'll learn how to deploy an Amazon EKS cluster, deploy a sample application, and scale the cluster using the Kubernetes Horizontal Pod Autoscaler (HPA).
+
+
+<br />
+<br />
+<br />
+
+
 
 **Step 1: Installing the required tools**
 
@@ -34,6 +54,13 @@ sudo mv /tmp/eksctl /usr/local/bin
 
 Save the above script as `eksctl.sh` then run `chmod +x eksctl.sh` and `sudo sh eksctl.sh`
 
+
+<br />
+<br />
+<br />
+
+
+
 **Step 2: Creating an EKS Cluster**
 
 1. Create a new Amazon EKS cluster using the `eksctl` command:
@@ -43,6 +70,13 @@ eksctl create cluster --name my-eks-cluster --region us-east-1 --nodegroup-name 
 ```
 
 Replace `my-eks-cluster` and `us-east-1` with your preferred cluster name and AWS region.
+
+
+<br />
+<br />
+<br />
+
+
 
 **Step 3: Deploying a Sample Application**
 
@@ -76,6 +110,14 @@ spec:
 kubectl apply -f deployment.yaml
 ```
 
+
+<br />
+<br />
+<br />
+
+
+
+
 **Step 4: Exposing the Application**
 
 1. Expose the application using a Kubernetes service:
@@ -91,6 +133,13 @@ kubectl get services my-service
 ```
 
 You can access the sample application using the external IP address and port number.
+
+
+<br />
+<br />
+<br />
+
+
 
 **Step 5: Setting up Horizontal Pod Autoscaler (HPA)**
 
@@ -157,6 +206,14 @@ kubectl apply -f aws-auth.yaml
 ```
 
 You should now have access to view all objects in the cluster
+
+
+
+<br />
+<br />
+<br />
+
+
 
 ## Delete the service and cluster
 
